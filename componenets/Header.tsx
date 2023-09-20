@@ -9,6 +9,7 @@ import {
 } from '@mui/material'
 import Menu from '../public/svg/Menu.svg'
 import WasspLogo from '../public/svg/Logo.svg'
+import ArrowDown from '../public/svg/ArrowDown.svg'
 import Image from 'next/image'
 
 const links = ['SEARCH', 'LOGIN', 'EN']
@@ -22,7 +23,12 @@ export default function Header() {
             <Box sx={{ display: 'flex', flexGrow: 1 }}>
               {links.map((link: string) => (
                 <MenuItem key={link}>
-                  <Typography> {link} </Typography>
+                  <Typography>{link}</Typography>
+                  {link === "EN" &&
+                    <Box sx={{marginLeft:'0.5em'}}>
+                      <Image src={ArrowDown} alt='language drop arrow' ></Image>
+                    </Box>
+                  }
                 </MenuItem>
               ))}
               <IconButton>
