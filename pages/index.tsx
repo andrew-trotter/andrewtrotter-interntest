@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import Header from '../componenets/Header'
-import styles from '../styles/Home.module.css'
-import { Typography, ThemeProvider, Box, Container, Grid } from '@mui/material'
-
-import { Html } from 'next/document'
+import { Typography, ThemeProvider, Box, Container, Grid, Button } from '@mui/material'
 import CssBaseline from '@mui/material/CssBaseline'
+import Image from 'next/image'
+
+
+
+import ArrowRight from "../public/svg/ArrowRight.svg"
 
 import theme from '../styles/theme'
 
@@ -26,7 +28,6 @@ export default function Home() {
           >
             <Header />
             <Grid container sx={{ marginTop: '5em' }}>
-              <Grid item sx={{ height: '' }}></Grid>
               <Grid item sx={{ marginLeft: '2em', width: '50vh' }}>
                 <Typography variant="h5">Sea it all</Typography>
                 <Typography variant="h2">
@@ -34,6 +35,14 @@ export default function Home() {
                 </Typography>
               </Grid>
             </Grid>
+            {/* <Box sx={{display:'flex', justifyContent:'space-between'}}> */}
+              <Typography paragraph sx={{maxWidth:'200px'}}>
+                WASSP multi-beam enables sustainable fishing, exploration, and
+                surveys with versatility and detail.
+              </Typography>
+              <Button variant='outlined' sx={{ justifySelf:'flex-end' }} >Contact Us<Image src={ArrowRight} alt='arrow for contact us'></Image></Button>
+
+            {/* </Box> */}
           </Box>
         </Box>
       </main>
