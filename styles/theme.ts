@@ -1,7 +1,5 @@
 import { Shadows, createTheme } from '@mui/material'
 
-
-
 const theme = createTheme({
   palette: {
     mode: 'dark',
@@ -9,12 +7,21 @@ const theme = createTheme({
       default: "052032",
     },
     primary: {
-      main: '#052032'
+      main: '#ffffff'
     },
   },
   shadows: Array(25).fill("none") as Shadows,
   typography: {
-    fontFamily: 'neue-haas-grotesk-display, Norwester',
+    fontFamily: 'Norwester',
+    fontSize: 14,
+    body1: {
+      fontFamily: "neue-haas-grotesk-display",
+      fontSize: 16
+    },
+    button: {
+      fontFamily: "neue-haas-grotesk-display",
+      fontSize: 16
+    }
   },
   components: {
     MuiCssBaseline: {
@@ -26,6 +33,15 @@ const theme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontWeight: '100',
+          borderRadius: '2em',
+          borderWidth: '1px',
+        }
+      }
+    }
   },
 })
 
